@@ -1,0 +1,39 @@
+/home/patryk/.config/systemd/user/redshift.service:
+
+[Unit]
+Description=Redshift adjusts the color temperature of your screen according to your surroundings
+#Documentation=http://jonls.dk/redshift/
+After=default.target
+
+[Service]
+#User=patryk
+#Group=patryk
+Type=simple
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/redshift -v
+TimeoutStopSec=5
+
+[Install]
+WantedBy=default.target
+
+/home/patryk/.config/redshift.conf:
+[redshift]
+temp-day=4700
+temp-night=2600
+gamma=1.000:1.000:1.000
+;brightness=0.9
+display=:0
+
+;gamma-day=1.000:1.000:1.000
+;gamma-night=1.000:1.000:1.000
+;brightness-day=1.0
+;brightness-night=0.7
+
+; Enable/Disable a smooth transition between day and night
+transition=1
+
+; Location
+location-provider=manual
+[manual]
+lat=52
+lon=21
