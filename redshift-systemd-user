@@ -1,4 +1,6 @@
-/home/patryk/.config/systemd/user/redshift.service:
+# Unit file for redshift to use with systemd --user
+# Place in:
+# /home/user/.config/systemd/user/redshift.service:
 
 [Unit]
 Description=Redshift adjusts the color temperature of your screen according to your surroundings
@@ -6,8 +8,8 @@ Description=Redshift adjusts the color temperature of your screen according to y
 After=default.target
 
 [Service]
-#User=patryk
-#Group=patryk
+#User=user
+#Group=user
 Type=simple
 Environment=DISPLAY=:0
 ExecStart=/usr/bin/redshift -v
@@ -16,7 +18,9 @@ TimeoutStopSec=5
 [Install]
 WantedBy=default.target
 
-/home/patryk/.config/redshift.conf:
+# Config file for redhsift
+# Place in:
+# /home/user/.config/redshift.conf:
 [redshift]
 temp-day=4700
 temp-night=2600

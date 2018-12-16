@@ -1,3 +1,3 @@
 # bash-things
 
-Random piece of useful things
+Random pieces of useful things.
